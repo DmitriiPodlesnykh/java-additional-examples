@@ -1,27 +1,18 @@
-package org.example;
+package com.luxoft.podlesnykh.example;
 
-import net.databinder.DataApplication;
 
-import org.hibernate.cfg.AnnotationConfiguration;
+import org.apache.commons.lang3.StringUtils;
 
-public class MyApplication extends DataApplication {
+public class MyApplication {
 
-	/**
-	 * @return Page to display when no specific page is requested
-	 */
-	@Override
-	public Class getHomePage() {
-		return MyDataPage.class;
+	public static void main(String... args) {
+
+		boolean a = StringUtils.isBlank(" ");
+
+		boolean b = StringUtils.isEmpty(" ");
+		System.out.println(a + " " + b);
 	}
-	
-	/**
-	 * Add annotated classes to config, leaving the call to super-implementation in most cases.
-	 * @param config Hibernate configuration
-	 */
-	@Override
-	protected void configureHibernate(AnnotationConfiguration config) {
-		super.configureHibernate(config);
-		//config.addAnnotatedClass(MyItem.class);
-	}
+
+
 
 }

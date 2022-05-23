@@ -9,21 +9,8 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<source>1.5</source>
-					<target>1.5</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.mortbay.jetty</groupId>
-				<artifactId>maven-jetty-plugin</artifactId>
-				<configuration>
-					<scanIntervalSeconds>10</scanIntervalSeconds>
-					<systemProperties>
-						<systemProperty>
-							<name>org.apache.commons.logging.Log</name>
-							<value>org.apache.commons.logging.impl.SimpleLog</value>
-						</systemProperty>
-					</systemProperties>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -39,29 +26,17 @@
 			</resource>
 		</resources>
 	</build>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<name>Databinder Application</name>
+	<name>Java examples</name>
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
 		<dependency>
-			<groupId>net.databinder</groupId>
-			<artifactId>databinder</artifactId>
-			<version>1.0</version>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.12.0</version>
 		</dependency>
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.0.4</version>
-		</dependency>
+
 	</dependencies>
 
-<!-- uncomment to download prerelease versions of Databinder
-	<repositories>
-		<repository>
-			<id>databinder-snapshots</id>
-			<name>Databinder snapshot repository</name>
-			<url>http://databinder.net/snapshot</url>
-		</repository>
-	</repositories>
--->
 </project>
